@@ -38,6 +38,12 @@ const routes = [
     component: () => import('../views/ChickNorris.vue'),
     meta: { title: 'Chick Norris' }
   },
+  {
+    path: '/memes',
+    name: 'memes',
+    component: () => import('../views/ProgrammingMeme.vue'),
+    meta: { title: 'Chick Norris' }
+  },
 ];
 
 const router = createRouter({

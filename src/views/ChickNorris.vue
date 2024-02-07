@@ -45,9 +45,9 @@ export default {
         method: 'GET',
         url: 'https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/search',
         params: {
-          query: 'Chuck Norris', // Example query, you can change it as needed
-          limit: 20, // Change to desired number of jokes per page
-          page: pageNumber, // Add page parameter
+          query: 'Chuck Norris',
+          limit: 20,
+          page: pageNumber,
         },
         headers: {
           accept: 'application/json',

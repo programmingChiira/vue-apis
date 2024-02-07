@@ -30,6 +30,9 @@
                 <router-link @click.native="collapseNavbar" to="/nutrition" class="nav-link">Nutrition</router-link>
               </li>
               <li class="nav-item">
+                <router-link @click.native="collapseNavbar" to="/memes" class="nav-link">Memes</router-link>
+              </li>
+              <li class="nav-item">
                 <router-link @click.native="collapseNavbar" to="/chuckNorris" class="nav-link">Chuck Norris</router-link>
               </li>
             </ul>

@@ -2,7 +2,14 @@
     <div class="weather-search">
         <h1>Weather Search</h1>
         <div>
-            <button class="btn btn-sm btn-primary" @click="fetchWeather">Fetch Weather</button>
+            <select v-model="selectedCity">
+                <option v-for="city in cityOptions" :key="city.name" :value="city.name">
+                    {{ city.name }}
+                </option>
+            </select>
+            <button class="btn btn-sm btn-primary" @click="fetchWeather">
+                Fetch Weather
+            </button>
             <div v-if="isLoading">
                 <p>Loading weather information...</p>
             </div>
@@ -10,15 +17,22 @@
                 <p>Error: {{ error }}</p>
             </div>
             <div v-else>
-                <p>Name: {{ weatherData.name }}</p>
-                <p>Place ID: {{ weatherData.place_id }}</p>
-                <p>Administrative Area 1: {{ weatherData.adm_area1 }}</p>
-                <p>Administrative Area 2: {{ weatherData.adm_area2 }}</p>
-                <p>Country: {{ weatherData.country }}</p>
-                <p>Latitude: {{ weatherData.lat }}</p>
-                <p>Longitude: {{ weatherData.lon }}</p>
-                <p>Timezone: {{ weatherData.timezone }}</p>
-                <p>Type: {{ weatherData.type }}</p>
+            </div>
+            <div v-else>
+                <ul v-if="weatherData.length > 0">
+                    <li v-for="place in weatherData" :key="place.place_id">
+                        <h2>{{ place.name }}</h2>
+                        <p>Place ID: {{ place.place_id }}</p>
+                        <p>Administrative Area 1: {{ place.adm_area1 }}</p>
+                        <p>Administrative Area 2: {{ place.adm_area2 }}</p>
+                        <p>Country: {{ place.country }}</p>
+                        <p>Latitude: {{ place.lat }}</p>
+                        <p>Longitude: {{ place.lon }}</p>
+                        <p>Timezone: {{ place.timezone }}</p>
+                        <p>Type: {{ place.type }}</p>
+                    </li>
+                </ul>
+                <p v-else>No results found</p>
             </div>
         </div>
     </div>
@@ -30,13 +44,29 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            weatherData: [], // Store weather information as an array
+            cityOptions: [
+                { name: 'Accra'},
+                { name: 'Tokyo'},
+                { name: 'London'},
+                { name: 'New York'},
+                { name: 'Mwanza'},
+                { name: 'Ngong'},
+                { name: 'Kenyatta'},
+                { name: 'Ouagadougou'},
+                { name: 'Garden City'},
+            ],
+            selectedCity: '',
+            weatherData: [],
             isLoading: false,
             error: null,
         };
     },
     methods: {
         async fetchWeather() {
+            if (!this.selectedCity) {
+                return; // Do nothing if no city is selected
+            }
+
             this.isLoading = true;
             this.error = null;
 
@@ -44,29 +74,18 @@ export default {
                 method: 'GET',
                 url: 'https://ai-weather-by-meteosource.p.rapidapi.com/find_places',
                 params: {
-                    text: 'California', // Replace with user's input
-                    language: 'en'
+                    text: this.selectedCity,
+                    language: 'en',
                 },
                 headers: {
-                    'X-RapidAPI-Key': 'YOUR_AP4113cbec39mshcf11b1d912ad411p14e994jsn27f8488c373bI_KEY', // Replace with your actual API key
-                    'X-RapidAPI-Host': 'ai-weather-by-meteosource.p.rapidapi.com'
-                }
+                    'X-RapidAPI-Key': '4113cbec39mshcf11b1d912ad411p14e994jsn27f8488c373b',
+                    'X-RapidAPI-Host': 'ai-weather-by-meteosource.p.rapidapi.com',
+                },
             };
 
             try {
                 const response = await axios.request(options);
-                for (const place of response.data) {
-                    console.log(`Name: ${place.name}`);
-                    console.log(`Place ID: ${place.place_id}`);
-                }
-            } catch (error) {
-                console.error(error);
-            }
-
-
-            try {
-                const response = await axios.request(options);
-                this.weatherData = response.data[0]; // Access the first (and only) object
+                this.weatherData = response.data;
             } catch (error) {
                 this.error = error.message;
             } finally {
