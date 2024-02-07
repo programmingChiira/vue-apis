@@ -54,6 +54,7 @@ export default {
                     this.fetchedData = []; // Clear data on error
                 });
         },
+        
         shuffleArticles() {
             // Shuffle the fetchedData array using the Fisher-Yates algorithm
             for (let i = this.fetchedData.length - 1; i > 0; i--) {
