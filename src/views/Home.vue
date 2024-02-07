@@ -4,4 +4,10 @@
   </div>
 </template>
 
-<style></style>
+<style scoped>
+/* Remove the media query and flex-related styling */
+.home {
+  /* Optionally, you can add some padding or margin to separate the content from the top */
+  padding-top: 20px;
+}
+</style>
