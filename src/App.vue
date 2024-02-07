@@ -1,7 +1,9 @@
 <template>
   <div>
     <div style="margin: 10px;">
-      <a href="/" class="navbar-brand"></a>
+      <a href="/" class="navbar-brand">
+        <i class="fa fa-envelope"></i>
+      </a>
     </div>
     <hr style="margin-top: -1px;" />
     <header>
@@ -16,16 +18,13 @@
           <div :class="{ 'collapse': !isNavbarOpen, 'navbar-collapse': true }" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <router-link @click.native="collapseNavbar" to="/bettingTips" class="nav-link">Betting Tips</router-link>
+                <router-link @click.native="collapseNavbar" to="/jokes" class="nav-link">Jokes</router-link>
               </li>
               <li class="nav-item">
-                <router-link @click.native="collapseNavbar" to="/memeGenerator" class="nav-link">Meme Generator</router-link>
+                <router-link @click.native="collapseNavbar" to="/kenyanews" class="nav-link">Kenyan News</router-link>
               </li>
               <li class="nav-item">
-                <router-link @click.native="collapseNavbar" to="/taxCalculator" class="nav-link">Tax Calculator</router-link>
-              </li>
-              <li class="nav-item">
-                <router-link @click.native="collapseNavbar" to="/worldAirports" class="nav-link">World Airports</router-link>
+                <router-link @click.native="collapseNavbar" to="/weather" class="nav-link">AI Weather</router-link>
               </li>
               <li class="nav-item">
                 <router-link @click.native="collapseNavbar" to="/nutrition" class="nav-link">Nutrition</router-link>

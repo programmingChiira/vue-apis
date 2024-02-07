@@ -9,28 +9,22 @@ const routes = [
     meta: { title: 'Home Page' }
   },
   {
-    path: '/bettingTips',
-    name: 'bettingTips',
-    component: () => import('../views/BettingTips.vue'),
+    path: '/jokes',
+    name: 'jokes',
+    component: () => import('../views/Jokes.vue'),
     meta: { title: 'Betting Tips' }
   },
   {
-    path: '/memeGenerator',
-    name: 'memeGenerator',
-    component: () => import('../views/MemeGenerator.vue'),
-    meta: { title: 'Meme Generator' }
+    path: '/kenyanews',
+    name: 'kenyanews',
+    component: () => import('../views/KenyanNews.vue'),
+    meta: { title: 'Betting Tips' }
   },
   {
-    path: '/taxCalculator',
-    name: 'taxCalculator',
-    component: () => import('../views/TaxCalculator.vue'),
-    meta: { title: 'Tax Calculator' }
-  },
-  {
-    path: '/worldAirports',
-    name: 'worldAirports',
-    component: () => import('../views/WorldAirports.vue'),
-    meta: { title: 'World Airports' }
+    path: '/weather',
+    name: 'weather',
+    component: () => import('../views/AiWeather.vue'),
+    meta: { title: 'Betting Tips' }
   },
   {
     path: '/nutrition',
