@@ -32,7 +32,7 @@ export default {
     },
     methods: {
         fetchData() {
-            fetch('https://kenyan-news-api.p.rapidapi.com/news/English', {
+            fetch('https://kenyan-news-api.p.rapidapi.com/news/swahili', {
                 method: "GET",
                 headers: {
                     'X-RapidAPI-Key': '4113cbec39mshcf11b1d912ad411p14e994jsn27f8488c373b',
