@@ -1,13 +1,18 @@
 <template>
   <div class="about">
     <h1>Betting Tips</h1>
+    <div>
+    </div>
   </div>
 </template>
 
+<script>
+//
+</script>
+
 <style scoped>
-/* Remove the media query and flex-related styling */
+
 .about {
-  /* Optionally, you can add some padding or margin to separate the content from the top */
   padding-top: 20px;
 }
 </style>
