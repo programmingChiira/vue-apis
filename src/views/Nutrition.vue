@@ -4,7 +4,7 @@
     <div>
       <div class="row">
         <div class="col-6 col-md-6">
-          <input placeholder="Type food" type="text" class="form-control" v-model="selectedChoice">
+          <input placeholder="e.g 2kg of rice" type="text" class="form-control" v-model="selectedChoice">
         </div>
 
         <div style="float: right;" class="col-6 col-md-6">
