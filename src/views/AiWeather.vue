@@ -4,11 +4,7 @@
         <div>
             <div class="row">
                 <div class="col-6 col-md-6">
-                    <select class="form form-control" v-model="selectedCity">
-                        <option v-for="city in cityOptions" :key="city.name" :value="city.name">
-                            {{ city.name }}
-                        </option>
-                    </select>
+                    <input placeholder="Enter name of a city" type="text" class="form-control" v-model="selectedCity">
                 </div>
                 <div style="float: right;" class="col-6 col-md-6">
                     <button class="btn btn-sm btn-primary" @click="fetchWeather">
