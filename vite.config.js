@@ -3,7 +3,6 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { VitePWA } from 'vite-plugin-pwa'
-const { GenerateSW } = require("workbox-webpack-plugin");
 
 
 // https://vitejs.dev/config/
