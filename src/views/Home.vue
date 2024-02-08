@@ -1,13 +1,15 @@
 <template>
   <div class="home">
-    <h1>This is the home page</h1>
+    <h1>Vue CLI</h1>
+    <pre>
+      On this particular simple project, I have worked on using Rapid 
+      APIs on the different components.
+    </pre>
   </div>
 </template>
 
 <style scoped>
-/* Remove the media query and flex-related styling */
 .home {
-  /* Optionally, you can add some padding or margin to separate the content from the top */
   padding-top: 20px;
 }
 </style>

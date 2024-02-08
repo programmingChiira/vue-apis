@@ -55,7 +55,7 @@ function collapseNavbar() {
 
 <style scoped>
 .router-link-active {
-  color: rgb(72, 255, 0); /* Change color to red when the link is active */
+  color: rgb(16, 150, 38); /* Change color to red when the link is active */
   font-weight: bold; /* Make the active link bold */
 }
 
