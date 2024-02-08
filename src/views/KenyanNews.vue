@@ -2,9 +2,9 @@
     <div class="news">
         <h1>Kenyan News</h1>
         <div>
-            <button class="btn btn-sm btn-primary" @click="fetchData">Generate</button>
-            <div v-if="fetchedData.length > 0">
-                <div v-for="article in shuffledFetchedData" :key="article.title">
+            <button style="margin-top: 20px;margin-bottom: 20px;" class="btn btn-sm btn-primary" @click="fetchData">Generate</button>
+            <div class="row" v-if="fetchedData.length > 0">
+                <div class="col-12 col-md-3" v-for="article in shuffledFetchedData" :key="article.title">
                     <h2>{{ article.title }}</h2>
                     <p>Author: {{ article.author }}</p>
                     <p>Publish Date: {{ article.publishedAt }}</p>

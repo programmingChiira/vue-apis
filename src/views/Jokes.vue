@@ -1,7 +1,7 @@
 <template>
     <div class="jokes">
-        <h1>Jokes</h1>
-        <div>
+        <h1>I got Jokes</h1>
+        <div style="margin-top: 20px;margin-bottom: 20px;">
             <button class="btn btn-sm btn-primary" @click="fetchData">Generate</button>
             <p v-if="joke">{{ joke }}</p>
         </div>

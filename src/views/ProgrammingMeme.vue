@@ -1,19 +1,25 @@
 <template>
-    <div class="news">
-        <h1>Kenyan News</h1>
+    <div class="memes">
+        <h1>programming memes</h1>
         <div>
-            <button class="btn btn-sm btn-primary" @click="fetchData">Generate</button>
-            <div v-if="fetchedData.length > 0">
-                <div v-for="article in shuffledFetchedData" :key="article.title">
-                    <img :src="article.image" alt="News Image">
-                    <p>Created: {{ article.created }}</p>
-                    <p>Upvotes: {{ article.upvotes }}</p>
-                    <p>Downvotes: {{ article.downvotes }}</p>
-                    <p>Modified: {{ article.modified }}</p>
-                    <hr>
+            <button style="margin-top: 10px;margin-bottom: 10px;" class="btn btn-sm btn-primary"
+                @click="fetchData">Generate</button>
+                <div class="row" v-if="fetchedData.length > 0">
+                    <div class="card col-12 col-md-4" style="" v-for="article in shuffledFetchedData" :key="article.title">
+                        <img class="card-img-top" :src="article.image" alt="Meme Image" style="height: 200px; object-fit: contain;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p>Created: {{ article.created }}</p>
+                            <p>Upvotes: {{ article.upvotes }}</p>
+                            <p>Downvotes: {{ article.downvotes }}</p>
+                            <p>Modified: {{ article.modified }}</p>
+                        </div>
+                        <div class="card-body">
+                            <a target="_blank" :href="article.image" class="card-link">View meme</a>
+                        </div>
+                    </div>                    
                 </div>
-            </div>
-            <p v-else>No news fetched yet.</p>
+            <p v-else>No memes fetched yet.</p>
         </div>
     </div>
 </template>
@@ -72,7 +78,6 @@ export default {
 </script>
 
 <style scoped>
-.news {
+.memes {
     padding-top: 20px;
-}
-</style>
+}</style>

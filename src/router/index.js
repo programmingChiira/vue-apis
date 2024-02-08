@@ -12,19 +12,19 @@ const routes = [
     path: '/jokes',
     name: 'jokes',
     component: () => import('../views/Jokes.vue'),
-    meta: { title: 'Betting Tips' }
+    meta: { title: 'Jokes' }
   },
   {
     path: '/kenyanews',
     name: 'kenyanews',
     component: () => import('../views/KenyanNews.vue'),
-    meta: { title: 'Betting Tips' }
+    meta: { title: 'Kenyan news' }
   },
   {
     path: '/weather',
     name: 'weather',
     component: () => import('../views/AiWeather.vue'),
-    meta: { title: 'Betting Tips' }
+    meta: { title: 'City Weather' }
   },
   {
     path: '/nutrition',
@@ -42,7 +42,7 @@ const routes = [
     path: '/memes',
     name: 'memes',
     component: () => import('../views/ProgrammingMeme.vue'),
-    meta: { title: 'Chick Norris' }
+    meta: { title: 'Programming Memes' }
   },
 ];
 

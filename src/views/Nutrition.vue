@@ -1,15 +1,22 @@
 <template>
   <div class="recipe-search">
-    <h1>Recipe Search</h1>
+    <h1>Recipe Select</h1>
     <div>
-      <select v-model="selectedChoice">
-        <option v-for="choice in choiceOptions" :key="choice.name" :value="choice.name">
-          {{ choice.name }}
-        </option>
-      </select>
-      <button class="btn btn-sm btn-primary" @click="fetchRecipe">
-        Fetch Recipe
-      </button>
+      <div class="row">
+        <div class="col-6 col-md-6">
+          <select class="form form-control" v-model="selectedChoice">
+            <option v-for="choice in choiceOptions" :key="choice.name" :value="choice.name">
+              {{ choice.name }}
+            </option>
+          </select>
+        </div>
+
+        <div style="float: right;" class="col-6 col-md-6">
+          <button class="btn btn-sm btn-primary" @click="fetchRecipe">
+            Fetch Recipe
+          </button>
+        </div>
+      </div>
       <div v-if="isLoading">
         <p>Loading recipe information...</p>
       </div>
@@ -19,8 +26,8 @@
       <div v-else>
       </div>
       <div v-else>
-        <ul v-if="recipeData.length > 0">
-          <li v-for="recipe in recipeData" :key="recipe.place_id">
+        <ul class="row" v-if="recipeData.length > 0">
+          <li class="col-12 col-md-3" v-for="recipe in recipeData" :key="recipe.place_id">
             <h2>{{ recipe.name }}</h2>
             <p>Calories: {{ recipe.calories }}</p>
             <p>Carbohydrates: {{ recipe.carbohydrates_total_g }}</p>
@@ -49,7 +56,7 @@ export default {
     return {
       choiceOptions: [
         { name: '1lb brisket with fries' },
-        { name: '1lb rice with chicken' },
+        { name: '1lb rice with chicken with onions' },
       ],
       selectedChoice: '',
       recipeData: [],

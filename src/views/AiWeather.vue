@@ -1,38 +1,43 @@
 <template>
     <div class="weather-search">
-        <h1>Weather Search</h1>
+        <h1>Weather Select</h1>
         <div>
-            <select v-model="selectedCity">
-                <option v-for="city in cityOptions" :key="city.name" :value="city.name">
-                    {{ city.name }}
-                </option>
-            </select>
-            <button class="btn btn-sm btn-primary" @click="fetchWeather">
-                Fetch Weather
-            </button>
-            <div v-if="isLoading">
-                <p>Loading weather information...</p>
-            </div>
-            <div v-else-if="error">
-                <p>Error: {{ error }}</p>
-            </div>
-            <div v-else>
-            </div>
-            <div v-else>
-                <ul v-if="weatherData.length > 0">
-                    <li v-for="place in weatherData" :key="place.place_id">
-                        <h2>{{ place.name }}</h2>
-                        <p>Place ID: {{ place.place_id }}</p>
-                        <p>Administrative Area 1: {{ place.adm_area1 }}</p>
-                        <p>Administrative Area 2: {{ place.adm_area2 }}</p>
-                        <p>Country: {{ place.country }}</p>
-                        <p>Latitude: {{ place.lat }}</p>
-                        <p>Longitude: {{ place.lon }}</p>
-                        <p>Timezone: {{ place.timezone }}</p>
-                        <p>Type: {{ place.type }}</p>
-                    </li>
-                </ul>
-                <p v-else>No results found</p>
+            <div class="row">
+                <div class="col-6 col-md-6">
+                    <select class="form form-control" v-model="selectedCity">
+                        <option v-for="city in cityOptions" :key="city.name" :value="city.name">
+                            {{ city.name }}
+                        </option>
+                    </select>
+                </div>
+                <div style="float: right;" class="col-6 col-md-6">
+                    <button class="btn btn-sm btn-primary" @click="fetchWeather">
+                        Fetch Weather
+                    </button>
+                </div>
+
+                <div v-if="isLoading">
+                    <p>Loading weather information...</p>
+                </div>
+                <div v-else-if="error">
+                    <p>Error: {{ error }}</p>
+                </div>
+                <div v-else>
+                    <ul class="row" v-if="weatherData.length > 0">
+                        <li class="col-12 col-md-3" v-for="place in weatherData" :key="place.place_id">
+                            <h2>{{ place.name }}</h2>
+                            <p>Place ID: {{ place.place_id }}</p>
+                            <p>Administrative Area 1: {{ place.adm_area1 }}</p>
+                            <p>Administrative Area 2: {{ place.adm_area2 }}</p>
+                            <p>Country: {{ place.country }}</p>
+                            <p>Latitude: {{ place.lat }}</p>
+                            <p>Longitude: {{ place.lon }}</p>
+                            <p>Timezone: {{ place.timezone }}</p>
+                            <p>Type: {{ place.type }}</p>
+                        </li>
+                    </ul>
+                    <p v-else>No results found</p>
+                </div>
             </div>
         </div>
     </div>
@@ -45,15 +50,15 @@ export default {
     data() {
         return {
             cityOptions: [
-                { name: 'Accra'},
-                { name: 'Tokyo'},
-                { name: 'London'},
-                { name: 'New York'},
-                { name: 'Mwanza'},
-                { name: 'Ngong'},
-                { name: 'Kenyatta'},
-                { name: 'Ouagadougou'},
-                { name: 'Garden City'},
+                { name: 'Accra' },
+                { name: 'Tokyo' },
+                { name: 'London' },
+                { name: 'New York' },
+                { name: 'Mwanza' },
+                { name: 'Ngong' },
+                { name: 'Kenyatta' },
+                { name: 'Ouagadougou' },
+                { name: 'Garden City' },
             ],
             selectedCity: '',
             weatherData: [],
