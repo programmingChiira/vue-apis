@@ -1,10 +1,10 @@
 <template>
     <div class="weather-search">
-        <h1>Weather Select</h1>
+        <h1>City Weather</h1>
         <div>
             <div class="row">
                 <div class="col-6 col-md-6">
-                    <input placeholder="Enter name of a city" type="text" class="form-control" v-model="selectedCity">
+                    <input placeholder="Enter city name" type="text" class="form-control" v-model="selectedCity">
                 </div>
                 <div style="float: right;" class="col-6 col-md-6">
                     <button class="btn btn-sm btn-primary" @click="fetchWeather">
