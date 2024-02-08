@@ -8,7 +8,7 @@
                     <div class="card col-12 col-md-4" style="" v-for="article in shuffledFetchedData" :key="article.title">
                         <img class="card-img-top" :src="article.image" alt="Meme Image" style="height: 200px; object-fit: contain;">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
+                            <h5 class="card-title">Meme</h5>
                             <p>Created: {{ article.created }}</p>
                             <p>Upvotes: {{ article.upvotes }}</p>
                             <p>Downvotes: {{ article.downvotes }}</p>
@@ -52,7 +52,7 @@ export default {
                     return response.json();
                 })
                 .then((data) => {
-                    this.fetchedData = data.slice(0, 10); // Store first 10 articles
+                    this.fetchedData = data.slice(0, 15); // Store first 10 articles
                     this.shuffleArticles(); // Shuffle the articles in place
                 })
                 .catch((error) => {

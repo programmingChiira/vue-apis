@@ -23,25 +23,27 @@
       <div v-else-if="error">
         <p>Error: {{ error }}</p>
       </div>
-      <div v-else>
-      </div>
-      <div v-else>
-        <ul class="row" v-if="recipeData.length > 0">
-          <li class="col-12 col-md-3" v-for="recipe in recipeData" :key="recipe.place_id">
-            <h2>{{ recipe.name }}</h2>
-            <p>Calories: {{ recipe.calories }}</p>
-            <p>Carbohydrates: {{ recipe.carbohydrates_total_g }}</p>
-            <p>Cholesterol: {{ recipe.cholesterol_mg }}</p>
-            <p>Saturated fat: {{ recipe.fat_saturated_g }}</p>
-            <p>Total fat: {{ recipe.fat_total_g }}</p>
-            <p>Fiber: {{ recipe.fiber_g }}</p>
-            <p>Potassium: {{ recipe.potassium_mg }}</p>
-            <p>Protein: {{ recipe.protein_g }}</p>
-            <p>Serving size: {{ recipe.serving_size_g }}</p>
-            <p>Sodium: {{ recipe.sodium_mg }}</p>
-            <p>Sugar: {{ recipe.sugar_g }}</p>
-          </li>
-        </ul>
+      <div style="margin-top: 20px;" v-else>
+        <div class="row" v-if="recipeData.length > 0">
+          <div class="col-12 col-md-3" v-for="recipe in recipeData" :key="recipe.place_id">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title">{{ recipe.name }}</h2>
+                <p class="card-text">Calories: {{ recipe.calories }}</p>
+                <p class="card-text">Carbohydrates: {{ recipe.carbohydrates_total_g }}</p>
+                <p class="card-text">Cholesterol: {{ recipe.cholesterol_mg }}</p>
+                <p class="card-text">Saturated fat: {{ recipe.fat_saturated_g }}</p>
+                <p class="card-text">Total fat: {{ recipe.fat_total_g }}</p>
+                <p class="card-text">Fiber: {{ recipe.fiber_g }}</p>
+                <p class="card-text">Potassium: {{ recipe.potassium_mg }}</p>
+                <p class="card-text">Protein: {{ recipe.protein_g }}</p>
+                <p class="card-text">Serving size: {{ recipe.serving_size_g }}</p>
+                <p class="card-text">Sodium: {{ recipe.sodium_mg }}</p>
+                <p class="card-text">Sugar: {{ recipe.sugar_g }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
         <p v-else>No results found</p>
       </div>
     </div>

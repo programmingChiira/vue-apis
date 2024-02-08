@@ -2,17 +2,22 @@
     <div class="news">
         <h1>Kenyan News</h1>
         <div>
-            <button style="margin-top: 20px;margin-bottom: 20px;" class="btn btn-sm btn-primary" @click="fetchData">Generate</button>
+            <button style="margin-top: 20px;margin-bottom: 20px;" class="btn btn-sm btn-primary"
+                @click="fetchData">Generate</button>
             <div class="row" v-if="fetchedData.length > 0">
                 <div class="col-12 col-md-3" v-for="article in shuffledFetchedData" :key="article.title">
-                    <h2>{{ article.title }}</h2>
-                    <p>Author: {{ article.author }}</p>
-                    <p>Publish Date: {{ article.publishedAt }}</p>
-                    <img :src="article.imgUrl" alt="News Image">
-                    <p>URL: <a :href="article.url">{{ article.url }}</a></p>
-                    <hr>
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ article.title }}</h2>
+                            <p class="card-text">Author: {{ article.author }}</p>
+                            <p class="card-text">Publish Date: {{ article.publishedAt }}</p>
+                            <img class="card-img-top" :src="article.imgUrl" alt="News Image">
+                            <p class="card-text">URL: <a :href="article.url">{{ article.url }}</a></p>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <p v-else>No news fetched yet.</p>
         </div>
     </div>
@@ -32,7 +37,7 @@ export default {
     },
     methods: {
         fetchData() {
-            fetch('https://kenyan-news-api.p.rapidapi.com/news/swahili', {
+            fetch('https://kenyan-news-api.p.rapidapi.com/news/English', {
                 method: "GET",
                 headers: {
                     'X-RapidAPI-Key': '4113cbec39mshcf11b1d912ad411p14e994jsn27f8488c373b',
@@ -54,7 +59,7 @@ export default {
                     this.fetchedData = []; // Clear data on error
                 });
         },
-        
+
         shuffleArticles() {
             // Shuffle the fetchedData array using the Fisher-Yates algorithm
             for (let i = this.fetchedData.length - 1; i > 0; i--) {
