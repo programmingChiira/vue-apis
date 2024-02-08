@@ -26,7 +26,7 @@
                 <router-link @click.native="collapseNavbar" to="/weather" class="nav-link" exact>AI Weather</router-link>
               </li>
               <li class="nav-item">
-                <router-link @click.native="collapseNavbar" to="/nutrition" class="nav-link" exact>Recipe</router-link>
+                <router-link @click.native="collapseNavbar" to="/nutrition" class="nav-link" exact>Food Nutrition Content</router-link>
               </li>
               <li class="nav-item">
                 <router-link @click.native="collapseNavbar" to="/memes" class="nav-link" exact>Memes</router-link>

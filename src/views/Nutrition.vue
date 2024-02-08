@@ -1,24 +1,20 @@
 <template>
   <div class="recipe-search">
-    <h1>Recipe Select</h1>
+    <h1>Food Nutrition</h1>
     <div>
       <div class="row">
         <div class="col-6 col-md-6">
-          <select class="form form-control" v-model="selectedChoice">
-            <option v-for="choice in choiceOptions" :key="choice.name" :value="choice.name">
-              {{ choice.name }}
-            </option>
-          </select>
+          <input placeholder="Type food" type="text" class="form-control" v-model="selectedChoice">
         </div>
 
         <div style="float: right;" class="col-6 col-md-6">
           <button class="btn btn-sm btn-primary" @click="fetchRecipe">
-            Fetch Recipe
+            Fetch Food content
           </button>
         </div>
       </div>
       <div v-if="isLoading">
-        <p>Loading recipe information...</p>
+        <p>Loading food information...</p>
       </div>
       <div v-else-if="error">
         <p>Error: {{ error }}</p>
