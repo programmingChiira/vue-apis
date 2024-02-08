@@ -1,11 +1,5 @@
 <template>
   <div>
-    <div style="margin: 10px;">
-      <a href="/" class="navbar-brand">
-        <i class="fa fa-envelope"></i>
-      </a>
-    </div>
-    <hr style="margin-top: -1px;" />
     <header>
       <nav class="navbar navbar-expand-lg navbar">
         <div class="container">
@@ -18,24 +12,24 @@
           <div :class="{ 'collapse': !isNavbarOpen, 'navbar-collapse': true }" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <router-link @click.native="collapseNavbar" to="/jokes" class="nav-link">Jokes</router-link>
+                  <router-link @click.native="collapseNavbar" to="/jokes" class="nav-link" exact>Jokes</router-link>
               </li>
               <li class="nav-item">
-                <router-link @click.native="collapseNavbar" to="/kenyanews" class="nav-link">Kenyan News</router-link>
+                  <router-link @click.native="collapseNavbar" to="/kenyanews" class="nav-link" exact>Kenyan News</router-link>
               </li>
               <li class="nav-item">
-                <router-link @click.native="collapseNavbar" to="/weather" class="nav-link">AI Weather</router-link>
+                  <router-link @click.native="collapseNavbar" to="/weather" class="nav-link" exact>AI Weather</router-link>
               </li>
               <li class="nav-item">
-                <router-link @click.native="collapseNavbar" to="/nutrition" class="nav-link">Recipe</router-link>
+                  <router-link @click.native="collapseNavbar" to="/nutrition" class="nav-link" exact>Recipe</router-link>
               </li>
               <li class="nav-item">
-                <router-link @click.native="collapseNavbar" to="/memes" class="nav-link">Memes</router-link>
+                  <router-link @click.native="collapseNavbar" to="/memes" class="nav-link" exact>Memes</router-link>
               </li>
               <li class="nav-item">
-                <router-link @click.native="collapseNavbar" to="/chuckNorris" class="nav-link">Chuck Norris</router-link>
+                  <router-link @click.native="collapseNavbar" to="/chuckNorris" class="nav-link" exact>Chuck Norris</router-link>
               </li>
-            </ul>
+          </ul>          
           </div>
         </div>
       </nav>
@@ -59,4 +53,10 @@ function collapseNavbar() {
 }
 </script>
 
-<style scoped>/* Add your custom styles here */</style>
+<style scoped>
+.router-link-active {
+  color: rgb(72, 255, 0); /* Change color to red when the link is active */
+  font-weight: bold; /* Make the active link bold */
+}
+
+</style>
