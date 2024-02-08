@@ -21,6 +21,12 @@ const routes = [
     meta: { title: 'Kenyan news' }
   },
   {
+    path: '/tvshows',
+    name: 'tvshows',
+    component: () => import('../views/LiveTv.vue'),
+    meta: { title: 'Live Tv shows' }
+  },
+  {
     path: '/weather',
     name: 'weather',
     component: () => import('../views/AiWeather.vue'),
@@ -35,7 +41,7 @@ const routes = [
   {
     path: '/chuckNorris',
     name: 'chuckNorris',
-    component: () => import('../views/ChickNorris.vue'),
+    component: () => import('../views/ChuckNorris.vue'),
     meta: { title: 'Chick Norris' }
   },
   {

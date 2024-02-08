@@ -2,7 +2,8 @@
   <div class="chuck-norris-jokes">
     <h1>Chuck Norris Jokes</h1>
     <div>
-      <button style="margin-top: 10px;margin-bottom: 10px;" class="btn btn-sm btn-primary" @click="fetchJokes(1)">Fetch Jokes</button>
+      <button style="margin-top: 10px;margin-bottom: 10px;" class="btn btn-sm btn-primary" @click="fetchJokes(1)">Fetch
+        Jokes</button>
       <div v-if="isLoading">
         <p>Loading jokes...</p>
       </div>
@@ -12,14 +13,14 @@
       <div v-else>
         <div class="row">
           <div style="margin-bottom: 10px;" class="col-12 col-md-4" v-for="(joke, index) in displayedJokes" :key="index">
-              <div class="card">
-                  <div class="card-body">
-                      <p class="card-text">{{ joke.value }}</p>
-                  </div>
+            <div class="card">
+              <div class="card-body">
+                <p class="card-text">{{ joke.value }}</p>
               </div>
+            </div>
           </div>
-      </div>
-      
+        </div>
+
         <div class="navigation">
           <button v-if="currentPage > 1" @click="fetchJokes(currentPage - 1)">Previous</button>
           <button v-if="currentPage < totalPages" @click="fetchJokes(currentPage + 1)">Next</button>
