@@ -15,7 +15,6 @@
               <img class="card-img-top" :src="tvShow.thumbnail" alt="Thumbnail">
               <div class="card-body">
                 <h5 class="card-title">{{ tvShow.name }}</h5>
-                <p class="card-text">{{ tvShow.description }}</p>
                 <p>Status: {{ tvShow.status }}</p>
                 <p>Views: {{ tvShow.views }}</p>
                 <div v-if="tvShow.streamUrls.length > 0">
